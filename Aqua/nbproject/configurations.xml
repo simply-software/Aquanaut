@@ -53,6 +53,22 @@
                    displayName="Test Files"
                    projectFiles="false"
                    kind="TEST_LOGICAL_FOLDER">
+      <logicalFolder name="f1"
+                     displayName="convert_from_string"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/convert_from_string_test_runner.cpp</itemPath>
+        <itemPath>tests/test_convert_from_string.cpp</itemPath>
+        <itemPath>tests/test_convert_from_string.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="f2"
+                     displayName="test_partition"
+                     projectFiles="true"
+                     kind="TEST">
+        <itemPath>tests/partition_test_runner.cpp</itemPath>
+        <itemPath>tests/test_partition.cpp</itemPath>
+        <itemPath>tests/test_partition.h</itemPath>
+      </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -67,7 +83,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>Cygwin|Cygwin</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
@@ -92,6 +108,34 @@
       </item>
       <item path="datetime.h" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="file_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter_records.h" ex="false" tool="3" flavor2="0">
@@ -113,6 +157,21 @@
       <item path="stdin_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="test_file.csv" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/convert_from_string_test_runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/partition_test_runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_convert_from_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_convert_from_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/test_partition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_partition.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="time.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -162,6 +221,34 @@
       </item>
       <item path="datetime.h" ex="false" tool="3" flavor2="0">
       </item>
+      <folder path="TestFiles/f1">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
+      <folder path="TestFiles/f2">
+        <cTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </cTool>
+        <ccTool>
+          <commandLine>`cppunit-config --cflags`</commandLine>
+        </ccTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f2</output>
+          <linkerLibItems>
+            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </folder>
       <item path="file_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter_records.h" ex="false" tool="3" flavor2="0">
@@ -183,6 +270,21 @@
       <item path="stdin_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="test_file.csv" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/convert_from_string_test_runner.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tests/partition_test_runner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_convert_from_string.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_convert_from_string.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tests/test_partition.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tests/test_partition.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="time.h" ex="false" tool="3" flavor2="0">
       </item>

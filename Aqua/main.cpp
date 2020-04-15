@@ -30,7 +30,7 @@ int main(int, char*[]) {
     observations.reserve(1024 * 1024); // Memory is cheap I guess?
 
     //aqua::stdin_data_source input_source;
-    aqua::file_data_source input_source("test_file.csv");
+    aqua::file_data_source input_source("chicago_beach_weather.csv");
     aqua::parse_csv_record  record_parser;
     while(input_source) {
         if (record_parser.parse_record(input_source())) {
@@ -46,12 +46,14 @@ int main(int, char*[]) {
 
     std::set<aqua::station_and_date_partition> partitions = aqua::partition<aqua::station_and_date_partition>(observations);
     for (const aqua::station_and_date_partition& partition : partitions) {
-        std::cout << partition.m_weather_station << " for " << to_string(partition.m_date) << std::endl;
+//        std::cout << partition.m_weather_station << " for " << to_string(partition.m_date) << std::endl;
         auto filter = aqua::make_record_filter(observations, aqua::weather_station_and_date_filter(partition.m_weather_station, partition.m_date));
         aqua::air_temperature_ranges temp_ranges;
         aqua::for_each(filter.begin(), filter.end(), temp_ranges);
-        std::cout << "  start: " << temp_ranges.m_start_of_day_temp << ", end: " << temp_ranges.m_end_of_day_temp << ", high: "
-            << temp_ranges.m_high_temp << ", low: " << temp_ranges.m_low_temp << std::endl;
+        std::cout << partition.m_weather_station << ',' << to_string(partition.m_date) << ',' << temp_ranges.m_start_of_day_temp << ','
+            << temp_ranges.m_end_of_day_temp << ',' << temp_ranges.m_high_temp << ',' << temp_ranges.m_low_temp << std::endl;
+//        std::cout << "  start: " << temp_ranges.m_start_of_day_temp << ", end: " << temp_ranges.m_end_of_day_temp << ", high: "
+//            << temp_ranges.m_high_temp << ", low: " << temp_ranges.m_low_temp << std::endl;
     }
 
     return 0;

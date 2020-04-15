@@ -20,6 +20,8 @@ namespace aqua {
             return *this;
         }
         
+        observation& operator=(observation&& rhs) = default;
+        
         void swap(observation& that) noexcept {
             using std::swap;
             

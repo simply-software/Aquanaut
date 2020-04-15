@@ -28,7 +28,7 @@ namespace aqua {
                 }
             }
         }        
-        
+           
         bool m_first_record = true;
         time_t m_earliest_record_of_day;
         time_t m_latest_record_of_day;

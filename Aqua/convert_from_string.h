@@ -7,11 +7,11 @@
 
 namespace aqua {
 
-    void convert_from_string(std::string& to, const std::string& from) {
+    inline void convert_from_string(std::string& to, const std::string& from) {
         to = from;
     }
 
-    void convert_from_string(double& to, const std::string& from) {
+    inline void convert_from_string(double& to, const std::string& from) {
         char* endp = nullptr;
 
         // The following assumes that .c_str() is idempotent, which is not technically guaranteed by

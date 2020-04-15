@@ -104,7 +104,7 @@ namespace aqua {
         MM_SLASH_DD_SLASH_YYYY
     };
     
-    std::string to_string(const date_t& date, DateFormat format = DateFormat::MM_SLASH_DD_SLASH_YYYY) {
+    inline std::string to_string(const date_t& date, DateFormat format = DateFormat::MM_SLASH_DD_SLASH_YYYY) {
         char buf[50];
         
         switch (format) {
