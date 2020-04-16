@@ -1,7 +1,7 @@
 #pragma once
 
 #include <type_traits>
-
+#if 0
 // Note: implementations mostly came from cppreference.com
 namespace std {
 
@@ -42,3 +42,4 @@ namespace std {
     struct is_signed : detail::is_signed<T>::type {};    
     
 } // namespace std
+#endif

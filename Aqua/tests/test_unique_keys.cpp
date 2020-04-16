@@ -1,21 +1,25 @@
 #include <set>
 #include <vector>
-#include "test_partition.h"
+#include "test_unique_keys.h"
 #include "../datetime.h"
-#include "../partition.h"
+#include "../unique_keys.h"
 
-CPPUNIT_TEST_SUITE_REGISTRATION(test_partition);
+CPPUNIT_TEST_SUITE_REGISTRATION(test_unique_keys);
 
-test_partition::test_partition() {
+test_unique_keys::test_unique_keys() {
+    // Nothing to do
 }
 
-test_partition::~test_partition() {
+test_unique_keys::~test_unique_keys() {
+    // Nothing to do
 }
 
-void test_partition::setUp() {
+void test_unique_keys::setUp() {
+    // Nothing to do
 }
 
-void test_partition::tearDown() {
+void test_unique_keys::tearDown() {
+    // Nothing to do
 }
 
 struct unique_date {
@@ -24,10 +28,10 @@ struct unique_date {
     aqua::date_t m_date;
 };
 
-void test_partition::testMethod() {
+void test_unique_keys::testMethod() {
     { // Simple case
         std::vector<aqua::datetime_t> v = { };
-        std::set<unique_date> result = aqua::partition<unique_date>(v);
+        std::set<unique_date> result = aqua::unique_keys<unique_date>(v);
         CPPUNIT_ASSERT(result.size() == 0);
     }
 
@@ -36,7 +40,3 @@ void test_partition::testMethod() {
     // case - input empty
 
 }
-
-void test_partition::testFailedMethod() {
-}
-

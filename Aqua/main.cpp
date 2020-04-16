@@ -6,10 +6,10 @@
 #include "air_temperature_ranges.h"
 #include "file_data_source.h"
 #include "filter_records.h"
-#include "for_each.h"
+#include "reduce.h"
 #include "observation.h"
 #include "parse_csv_record.h"
-#include "partition.h"
+#include "unique_keys.h"
 #include "station_and_date_partition.h"
 #include "stdin_data_source.h"
 #include "weather_station_and_date_filter.h"
@@ -44,12 +44,12 @@ int main(int, char*[]) {
         }
     }
 
-    std::set<aqua::station_and_date_partition> partitions = aqua::partition<aqua::station_and_date_partition>(observations);
+    std::set<aqua::station_and_date_partition> partitions = aqua::unique_keys<aqua::station_and_date_partition>(observations);
     for (const aqua::station_and_date_partition& partition : partitions) {
 //        std::cout << partition.m_weather_station << " for " << to_string(partition.m_date) << std::endl;
         auto filter = aqua::make_record_filter(observations, aqua::weather_station_and_date_filter(partition.m_weather_station, partition.m_date));
         aqua::air_temperature_ranges temp_ranges;
-        aqua::for_each(filter.begin(), filter.end(), temp_ranges);
+        aqua::reduce(filter.begin(), filter.end(), temp_ranges);
         std::cout << partition.m_weather_station << ',' << to_string(partition.m_date) << ',' << temp_ranges.m_start_of_day_temp << ','
             << temp_ranges.m_end_of_day_temp << ',' << temp_ranges.m_high_temp << ',' << temp_ranges.m_low_temp << std::endl;
 //        std::cout << "  start: " << temp_ranges.m_start_of_day_temp << ", end: " << temp_ranges.m_end_of_day_temp << ", high: "

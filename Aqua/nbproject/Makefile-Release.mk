@@ -42,15 +42,12 @@ TESTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tests
 
 # Test Files
 TESTFILES= \
-	${TESTDIR}/TestFiles/f1 \
-	${TESTDIR}/TestFiles/f2
+	${TESTDIR}/TestFiles/f1
 
 # Test Object Files
 TESTOBJECTFILES= \
-	${TESTDIR}/tests/convert_from_string_test_runner.o \
-	${TESTDIR}/tests/partition_test_runner.o \
-	${TESTDIR}/tests/test_convert_from_string.o \
-	${TESTDIR}/tests/test_partition.o
+	${TESTDIR}/tests/convert_from_string_double_test_runner.o \
+	${TESTDIR}/tests/test_convert_from_string_double.o
 
 # C Compiler Flags
 CFLAGS=
@@ -88,37 +85,21 @@ ${OBJECTDIR}/main.o: main.cpp nbproject/Makefile-${CND_CONF}.mk
 .build-tests-conf: .build-tests-subprojects .build-conf ${TESTFILES}
 .build-tests-subprojects:
 
-${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/convert_from_string_test_runner.o ${TESTDIR}/tests/test_convert_from_string.o ${OBJECTFILES:%.o=%_nomain.o}
+${TESTDIR}/TestFiles/f1: ${TESTDIR}/tests/convert_from_string_double_test_runner.o ${TESTDIR}/tests/test_convert_from_string_double.o ${OBJECTFILES:%.o=%_nomain.o}
 	${MKDIR} -p ${TESTDIR}/TestFiles
 	${LINK.cc} -o ${TESTDIR}/TestFiles/f1 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
-${TESTDIR}/TestFiles/f2: ${TESTDIR}/tests/partition_test_runner.o ${TESTDIR}/tests/test_partition.o ${OBJECTFILES:%.o=%_nomain.o}
-	${MKDIR} -p ${TESTDIR}/TestFiles
-	${LINK.cc} -o ${TESTDIR}/TestFiles/f2 $^ ${LDLIBSOPTIONS}   `cppunit-config --libs`   
 
-
-${TESTDIR}/tests/convert_from_string_test_runner.o: tests/convert_from_string_test_runner.cpp 
+${TESTDIR}/tests/convert_from_string_double_test_runner.o: tests/convert_from_string_double_test_runner.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/convert_from_string_test_runner.o tests/convert_from_string_test_runner.cpp
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/convert_from_string_double_test_runner.o tests/convert_from_string_double_test_runner.cpp
 
 
-${TESTDIR}/tests/test_convert_from_string.o: tests/test_convert_from_string.cpp 
+${TESTDIR}/tests/test_convert_from_string_double.o: tests/test_convert_from_string_double.cpp 
 	${MKDIR} -p ${TESTDIR}/tests
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/test_convert_from_string.o tests/test_convert_from_string.cpp
-
-
-${TESTDIR}/tests/partition_test_runner.o: tests/partition_test_runner.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/partition_test_runner.o tests/partition_test_runner.cpp
-
-
-${TESTDIR}/tests/test_partition.o: tests/test_partition.cpp 
-	${MKDIR} -p ${TESTDIR}/tests
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/test_partition.o tests/test_partition.cpp
+	$(COMPILE.cc) -O2 `cppunit-config --cflags` -MMD -MP -MF "$@.d" -o ${TESTDIR}/tests/test_convert_from_string_double.o tests/test_convert_from_string_double.cpp
 
 
 ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp 
@@ -139,7 +120,6 @@ ${OBJECTDIR}/main_nomain.o: ${OBJECTDIR}/main.o main.cpp
 	@if [ "${TEST}" = "" ]; \
 	then  \
 	    ${TESTDIR}/TestFiles/f1 || true; \
-	    ${TESTDIR}/TestFiles/f2 || true; \
 	else  \
 	    ./${TEST} || true; \
 	fi

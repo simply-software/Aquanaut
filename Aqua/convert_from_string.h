@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cerrno>
+#include <ctype.h>
 #include <stdexcept>
 #include <cstdlib>
 #include <string>
@@ -17,7 +18,7 @@ namespace aqua {
         // The following assumes that .c_str() is idempotent, which is not technically guaranteed by
         // the standard, but in practice is always the case.
         to = strtod(from.c_str(), &endp);
-        if (*endp != '\0') {
+        if (*endp != '\0' && !std::isspace(*endp)) {
             throw std::runtime_error("'" + from + "' is not a valid double format");                
         }
 

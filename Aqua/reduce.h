@@ -6,7 +6,7 @@ namespace aqua {
     // to be stateful.
     //
     template<typename InputIter, typename Predicate>
-    void for_each(InputIter first, InputIter last, Predicate& predicate) {
+    void reduce(InputIter first, InputIter last, Predicate& predicate) {
         while (first != last) {
             predicate(*first++);
         }

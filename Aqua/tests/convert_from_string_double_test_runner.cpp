@@ -1,18 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * File:   partition_test_runner.cpp
- * Author: Jay
- *
- * Created on Apr 15, 2020, 10:09:56 AM
- */
-
-// CppUnit site http://sourceforge.net/projects/cppunit/files
-
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>

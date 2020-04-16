@@ -6,16 +6,12 @@
                    projectFiles="true">
       <logicalFolder name="f4" displayName="algorithms" projectFiles="true">
         <itemPath>convert_from_string.h</itemPath>
-        <itemPath>for_each.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f7" displayName="analysis" projectFiles="true">
         <itemPath>air_temperature_ranges.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="f2" displayName="boost" projectFiles="true">
-        <itemPath>optional.h</itemPath>
-      </logicalFolder>
       <logicalFolder name="f3" displayName="c++14" projectFiles="true">
-        <itemPath>type_traits.h</itemPath>
+        <itemPath>reduce.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f5" displayName="filters" projectFiles="true">
         <itemPath>README_filters.txt</itemPath>
@@ -26,8 +22,8 @@
         <itemPath>weather_station_filter.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f6" displayName="paritioning" projectFiles="true">
-        <itemPath>partition.h</itemPath>
         <itemPath>station_and_date_partition.h</itemPath>
+        <itemPath>unique_keys.h</itemPath>
       </logicalFolder>
       <logicalFolder name="f1" displayName="types" projectFiles="true">
         <itemPath>date.h</itemPath>
@@ -57,17 +53,9 @@
                      displayName="convert_from_string"
                      projectFiles="true"
                      kind="TEST">
-        <itemPath>tests/convert_from_string_test_runner.cpp</itemPath>
-        <itemPath>tests/test_convert_from_string.cpp</itemPath>
-        <itemPath>tests/test_convert_from_string.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2"
-                     displayName="test_partition"
-                     projectFiles="true"
-                     kind="TEST">
-        <itemPath>tests/partition_test_runner.cpp</itemPath>
-        <itemPath>tests/test_partition.cpp</itemPath>
-        <itemPath>tests/test_partition.h</itemPath>
+        <itemPath>tests/convert_from_string_double_test_runner.cpp</itemPath>
+        <itemPath>tests/test_convert_from_string_double.cpp</itemPath>
+        <itemPath>tests/test_convert_from_string_double.h</itemPath>
       </logicalFolder>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
@@ -122,35 +110,17 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <folder path="TestFiles/f2">
-        <cTool>
-          <commandLine>`cppunit-config --cflags`</commandLine>
-        </cTool>
-        <ccTool>
-          <commandLine>`cppunit-config --cflags`</commandLine>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f2</output>
-          <linkerLibItems>
-            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
-          </linkerLibItems>
-        </linkerTool>
-      </folder>
       <item path="file_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter_records.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="for_each.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="observation.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="optional.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="parse_csv_record.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="partition.h" ex="false" tool="3" flavor2="0">
+      <item path="reduce.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="station_and_date_partition.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -158,26 +128,26 @@
       </item>
       <item path="test_file.csv" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="tests/convert_from_string_test_runner.cpp"
+      <item path="tests/convert_from_string_double_test_runner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/partition_test_runner.cpp" ex="false" tool="1" flavor2="0">
+      <item path="tests/test_convert_from_string_double.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="tests/test_convert_from_string.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/test_convert_from_string.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/test_partition.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/test_partition.h" ex="false" tool="3" flavor2="0">
+      <item path="tests/test_convert_from_string_double.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="time.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="type_traits.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="typesafe_pod.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unique_keys.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="weather_station_and_date_filter.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -235,35 +205,17 @@
           </linkerLibItems>
         </linkerTool>
       </folder>
-      <folder path="TestFiles/f2">
-        <cTool>
-          <commandLine>`cppunit-config --cflags`</commandLine>
-        </cTool>
-        <ccTool>
-          <commandLine>`cppunit-config --cflags`</commandLine>
-        </ccTool>
-        <linkerTool>
-          <output>${TESTDIR}/TestFiles/f2</output>
-          <linkerLibItems>
-            <linkerOptionItem>`cppunit-config --libs`</linkerOptionItem>
-          </linkerLibItems>
-        </linkerTool>
-      </folder>
       <item path="file_data_source.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="filter_records.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="for_each.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="observation.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="optional.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="parse_csv_record.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="partition.h" ex="false" tool="3" flavor2="0">
+      <item path="reduce.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="station_and_date_partition.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -271,26 +223,26 @@
       </item>
       <item path="test_file.csv" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="tests/convert_from_string_test_runner.cpp"
+      <item path="tests/convert_from_string_double_test_runner.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="tests/partition_test_runner.cpp" ex="false" tool="1" flavor2="0">
+      <item path="tests/test_convert_from_string_double.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
-      <item path="tests/test_convert_from_string.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/test_convert_from_string.h" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="tests/test_partition.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="tests/test_partition.h" ex="false" tool="3" flavor2="0">
+      <item path="tests/test_convert_from_string_double.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
       </item>
       <item path="time.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="type_traits.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="typesafe_pod.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="unique_keys.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="weather_station_and_date_filter.h" ex="false" tool="3" flavor2="0">
       </item>
